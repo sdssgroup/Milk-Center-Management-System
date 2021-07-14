@@ -1,0 +1,22 @@
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+
+ErrorDocument 400 /milk/error.php
+ErrorDocument 401 /milk/error.php
+ErrorDocument 403 /milk/error.php
+ErrorDocument 404 /milk/error.php
+ErrorDocument 405 /milk/error.php
+ErrorDocument 406 /milk/error.php
+ErrorDocument 500 /milk/error.php
+ErrorDocument 501 /milk/error.php
+ErrorDocument 503 /milk/error.php
+ErrorDocument 505 /milk/error.php
+ErrorDocument 502 /milk/error.php
+ErrorDocument 504 /milk/error.php
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
